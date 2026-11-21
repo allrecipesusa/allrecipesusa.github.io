@@ -1,0 +1,739 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>AllrecipesUSA — Everyday American Recipes with Prices &amp; Full Details</title>
+<meta name="description" content="AllrecipesUSA: the American recipes cooked every day in the USA — pancakes, burgers, mac and cheese, tacos, chili and more — with full ingredients, step-by-step instructions, nutrition and an honest estimated cost for every dish." />
+<meta name="keywords" content="american recipes, everyday recipes USA, recipes with prices, cost per serving, pancakes recipe, cheeseburger recipe, mac and cheese, beef chili, cheap family dinners" />
+<link rel="canonical" href="https://allrecipesusa.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="AllrecipesUSA" />
+<meta property="og:title" content="AllrecipesUSA — Everyday American Recipes with Prices &amp; Full Details" />
+<meta property="og:description" content="The dishes America cooks every day, with full ingredients, instructions, nutrition and the estimated cost of every recipe and every serving." />
+<meta property="og:url" content="https://allrecipesusa.github.io/" />
+<meta property="og:image" content="https://allrecipesusa.github.io/assets/burger.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AllrecipesUSA — Everyday American Recipes with Prices" />
+<meta name="twitter:description" content="Everyday American recipes with full details and an estimated cost per recipe and per serving." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AllrecipesUSA","url":"https://allrecipesusa.github.io/","description":"Everyday American recipes with full details, nutrition and estimated ingredient costs.","inLanguage":"en-US"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How are the recipe prices on AllrecipesUSA calculated?","acceptedAnswer":{"@type":"Answer","text":"Every recipe lists each ingredient with the estimated cost of the amount the recipe uses, based on typical US supermarket prices in November 2025. The ingredient costs add up to the recipe total, which is divided by the servings to give the cost per serving. Pantry staples you use only a pinch of are charged at the small amount used, not the full package price."}},
+{"@type":"Question","name":"Are the prices exact?","acceptedAnswer":{"@type":"Answer","text":"No — they are careful estimates. Grocery prices vary by state, store and season, so treat the figures as a realistic guide for planning, not a quote. The Price Guide page lists the supermarket prices behind every estimate so you can compare with your own store."}},
+{"@type":"Question","name":"Can I change the number of servings?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every recipe page has a serving scaler: tap plus or minus and all ingredient quantities and costs update automatically."}},
+{"@type":"Question","name":"Is AllrecipesUSA affiliated with Allrecipes.com?","acceptedAnswer":{"@type":"Answer","text":"No. AllrecipesUSA is an independent recipe collection. All recipes here are original, written and tested in our own kitchen."}}
+]}
+</script>
+<style>
+:root{
+  --bg:#fdfcfa; --surface:#ffffff; --surface2:#f6f1ea; --ink:#262019; --muted:#6f6455;
+  --line:#e7ddd0; --red:#b5341f; --red-dark:#93301d; --green:#3e6b34; --gold:#c07f13;
+  --chip:#f3e9dc; --shadow:0 10px 30px rgba(60,35,10,.10); --radius:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#161310; --surface:#211c17; --surface2:#2a241d; --ink:#f3ede3; --muted:#b8ab99;
+    --line:#3a332a; --red:#e0684c; --red-dark:#e0684c; --green:#8fbf7f; --gold:#e0a83e;
+    --chip:#2e2820; --shadow:0 10px 30px rgba(0,0,0,.45);
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+img{max-width:100%;display:block}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.serif{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.15}
+button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:3px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.header-in{display:flex;align-items:center;gap:14px;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.logo{font-family:"DM Serif Display",Georgia,serif;font-size:1.65rem;color:var(--ink);letter-spacing:.2px;white-space:nowrap}
+.logo:hover{text-decoration:none}
+.logo .us{color:var(--red)}
+.logo small{display:block;font-family:"DM Sans",sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+nav.mainnav{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.mainnav a{color:var(--ink);font-weight:600;font-size:.95rem;padding:9px 11px;border-radius:9px;min-height:2.25rem;display:inline-flex;align-items:center}
+nav.mainnav a:hover{background:var(--surface2);text-decoration:none}
+nav.mainnav a.active{color:var(--red)}
+.hsearch{display:flex;gap:8px;width:100%;padding-bottom:12px}
+.hsearch input{flex:1;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface2);color:var(--ink);font-size:1rem}
+.hsearch button{background:var(--red);color:#fff;border:0;border-radius:10px;padding:10px 20px;font-weight:700;cursor:pointer;font-size:1rem}
+.hsearch button:hover{background:var(--red-dark)}
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;padding:42px 0 30px}
+.hero h1{font-size:2.9rem;margin:0 0 14px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero p.lede{font-size:1.13rem;color:var(--muted);margin:0 0 20px;max-width:34rem}
+.hero-stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px}
+.hero-stats div b{display:block;font-family:"DM Serif Display",serif;font-size:1.5rem;color:var(--ink)}
+.hero-stats div span{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.hero-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+.hero-img img{width:100%;height:430px;object-fit:cover}
+.hero-badge{position:absolute;left:14px;bottom:14px;background:var(--surface);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow);font-size:.9rem}
+.hero-badge b{color:var(--red)}
+/* Sections */
+section.block{padding:26px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.sec-head h2{font-size:2rem;margin:0}
+.sec-sub{color:var(--muted);margin:4px 0 18px;max-width:46rem}
+/* Chips + toolbar */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 20px}
+.chip{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.92rem;cursor:pointer;min-height:2.5rem}
+.chip:hover{border-color:var(--red)}
+.chip.on{background:var(--red);border-color:var(--red);color:#fff}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:18px}
+.toolbar select{padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font-size:.95rem}
+.toolbar .count{color:var(--muted);font-size:.92rem;margin-left:auto}
+/* Cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 3px 12px rgba(60,35,10,.05);display:flex;flex-direction:column}
+.card a.imglink{display:block}
+.card img{width:100%;height:215px;object-fit:cover}
+.card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat{font-size:.72rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.card h3{font-size:1.32rem;margin:0}
+.card h3 a{color:var(--ink)}
+.card h3 a:hover{color:var(--red);text-decoration:none}
+.card p{margin:0;color:var(--muted);font-size:.94rem}
+.meta-row{display:flex;gap:14px;flex-wrap:wrap;font-size:.86rem;color:var(--muted);margin-top:auto;padding-top:6px}
+.meta-row b{color:var(--ink)}
+.price-row{display:flex;align-items:center;justify-content:space-between;border-top:1px dashed var(--line);padding-top:11px;margin-top:4px}
+.price-row .per{font-family:"DM Serif Display",serif;font-size:1.35rem;color:var(--red)}
+.price-row .per small{font-family:"DM Sans",sans-serif;font-size:.75rem;color:var(--muted);font-weight:700}
+.price-row .total{font-size:.85rem;color:var(--muted);text-align:right}
+.stars{color:var(--gold);font-size:.9rem;letter-spacing:1px}
+.stars span{color:var(--muted);letter-spacing:0;font-size:.82rem}
+/* Category tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;cursor:pointer;text-align:left;font:inherit;color:var(--ink)}
+.tile:hover{border-color:var(--red)}
+.tile h3{margin:0 0 4px;font-size:1.25rem}
+.tile p{margin:0;color:var(--muted);font-size:.9rem}
+.tile .n{font-weight:900;color:var(--red)}
+/* Info band */
+.band{background:var(--surface2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:30px 0}
+.band-grid h3{margin:0 0 6px;font-size:1.3rem}
+.band-grid p{margin:0;color:var(--muted);font-size:.95rem}
+/* Recipe detail */
+.crumb{font-size:.9rem;color:var(--muted);padding:18px 0 0}
+.detail-head{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding:16px 0 8px;align-items:start}
+.detail-head img{width:100%;height:400px;object-fit:cover;border-radius:18px;box-shadow:var(--shadow)}
+.detail-head h1{font-size:2.5rem;margin:6px 0 10px}
+.detail-head .desc{color:var(--muted);font-size:1.05rem}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 8px;text-align:center}
+.stat b{display:block;font-size:1.06rem}
+.stat span{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+.cost-box{background:var(--surface);border:2px solid var(--red);border-radius:14px;padding:16px 18px;margin:6px 0 4px}
+.cost-box .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.cost-box .big{font-family:"DM Serif Display",serif;font-size:1.9rem;color:var(--red)}
+.cost-box small{color:var(--muted)}
+.scaler{display:flex;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.scaler button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--red);background:var(--surface);color:var(--red);font-size:1.3rem;font-weight:900;cursor:pointer;line-height:1}
+.scaler button:hover{background:var(--red);color:#fff}
+.scaler b{font-size:1.1rem;min-width:110px;text-align:center}
+.detail-cols{display:grid;grid-template-columns:380px 1fr;gap:34px;padding:22px 0 10px;align-items:start}
+.ing-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;position:sticky;top:120px}
+.ing-card h2{margin:0 0 4px;font-size:1.5rem}
+.ing-card .note{font-size:.85rem;color:var(--muted);margin:0 0 12px}
+.ing-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.ing-row:last-of-type{border-bottom:0}
+.ing-row .amt{font-weight:700;white-space:nowrap}
+.ing-row .pr{color:var(--red);font-weight:700;white-space:nowrap}
+.ing-total{display:flex;justify-content:space-between;font-weight:900;padding-top:12px;font-size:1.02rem}
+.steps h2,.nutri h2{font-size:1.7rem;margin:0 0 12px}
+.step{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:0}
+.step .num{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:var(--red);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.step p{margin:0}
+.step p b{display:block;margin-bottom:2px}
+.nutri{margin-top:26px}
+.nutri-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.nutri-grid .stat b{font-size:1.2rem}
+.tip-box{background:var(--chip);border-radius:12px;padding:16px 18px;margin-top:24px}
+.tip-box h3{margin:0 0 6px;font-size:1.15rem}
+.tip-box p{margin:0;font-size:.95rem}
+/* Tables */
+table.prices{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+table.prices th,table.prices td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:.96rem}
+table.prices th{background:var(--surface2);font-size:.78rem;text-transform:uppercase;letter-spacing:.07em}
+table.prices td:last-child,table.prices th:last-child{text-align:right;font-weight:700}
+table.prices tr:last-child td{border-bottom:0}
+/* Text pages */
+.prose{max-width:760px;padding:24px 0 10px}
+.prose h1{font-size:2.4rem;margin:0 0 12px}
+.prose h2{font-size:1.6rem;margin:28px 0 8px}
+.prose p{color:var(--ink);margin:0 0 13px}
+.prose p.dim,.prose li{color:var(--muted)}
+.prose ul{margin:0 0 13px;padding-left:22px}
+.prose li{margin-bottom:6px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:4px 18px}
+.faq-item summary{cursor:pointer;font-weight:700;padding:12px 0;font-size:1.02rem}
+.faq-item p{color:var(--muted);margin:0 0 14px}
+form.contact{display:grid;gap:12px;max-width:560px}
+form.contact label{font-weight:700;font-size:.92rem;display:grid;gap:6px}
+form.contact input,form.contact textarea{padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;width:100%}
+form.contact button{background:var(--red);color:#fff;border:0;border-radius:10px;padding:12px 22px;font-weight:700;font-size:1rem;cursor:pointer;justify-self:start}
+.btn{display:inline-block;background:var(--red);color:#fff;border-radius:10px;padding:12px 22px;font-weight:700;border:0;cursor:pointer;font-size:1rem}
+.btn:hover{background:var(--red-dark);text-decoration:none;color:#fff}
+.btn.ghost{background:var(--surface);color:var(--red);border:1.5px solid var(--red)}
+.btn.ghost:hover{background:var(--surface2)}
+.empty{padding:50px 0;text-align:center;color:var(--muted)}
+/* Footer */
+footer.site{margin-top:50px;background:#241a12;color:#e9dfd2}
+@media (prefers-color-scheme: dark){footer.site{background:#0f0d0a}}
+footer.site .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:26px;padding:38px 0 10px}
+footer.site h4{font-family:"DM Serif Display",serif;font-weight:400;font-size:1.15rem;margin:0 0 10px;color:#fff}
+footer.site a{color:#e9dfd2;font-size:.93rem;display:block;padding:4px 0;min-height:2rem}
+footer.site a:hover{color:#ffb59d}
+footer.site p{font-size:.9rem;color:#c9bba7;margin:0 0 10px;max-width:22rem}
+footer.site .fine{border-top:1px solid rgba(255,255,255,.14);padding:16px 0 26px;font-size:.82rem;color:#b3a48d;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+@media (max-width:960px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr;padding-top:26px}
+  .hero-img img{height:300px}
+  .hero h1{font-size:2.3rem}
+  .detail-head{grid-template-columns:1fr}
+  .detail-head img{height:300px}
+  .detail-cols{grid-template-columns:1fr}
+  .ing-card{position:static}
+  .band-grid{grid-template-columns:1fr}
+  footer.site .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .nutri-grid{grid-template-columns:repeat(2,1fr)}
+  .logo{font-size:1.4rem}
+  nav.mainnav a{padding:8px 8px;font-size:.9rem}
+  .detail-head h1{font-size:2rem}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <div class="header-in">
+      <a class="logo" href="#/">Allrecipes<span class="us">USA</span><small>Everyday American cooking, priced honestly</small></a>
+      <nav class="mainnav" id="mainnav">
+        <a href="#/" data-nav="home">Home</a>
+        <a href="#/recipes" data-nav="recipes">Recipes</a>
+        <a href="#/prices" data-nav="prices">Price Guide</a>
+        <a href="#/about" data-nav="about">About</a>
+        <a href="#/faq" data-nav="faq">FAQ</a>
+        <a href="#/contact" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+    <form class="hsearch" id="hsearch">
+      <input type="search" id="hq" placeholder="Search recipes or ingredients — try &quot;beef&quot;, &quot;cheese&quot;, &quot;pancakes&quot;…" aria-label="Search recipes" />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</header>
+<main id="app" class="wrap"></main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h4>AllrecipesUSA</h4>
+        <p>The food America actually cooks on ordinary days — with the full recipe and the honest cost of every dish, down to the last ingredient.</p>
+        <p>Prices are estimates from typical US supermarket prices (November 2025) and vary by store, state and season.</p>
+      </div>
+      <div>
+        <h4>Recipes</h4>
+        <a href="#/recipes?cat=Breakfast">Breakfast</a>
+        <a href="#/recipes?cat=Lunch">Lunch</a>
+        <a href="#/recipes?cat=Dinner">Dinner</a>
+        <a href="#/recipes?cat=Desserts">Desserts</a>
+        <a href="#/recipes">All recipes</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="#/prices">Grocery Price Guide</a>
+        <a href="#/about">About Us</a>
+        <a href="#/faq">FAQ</a>
+        <a href="#/contact">Contact</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="#/privacy">Privacy Policy</a>
+        <a href="#/terms">Terms of Use</a>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2025 AllrecipesUSA. All recipes are original and written for home cooks.</span>
+      <span>AllrecipesUSA is an independent recipe collection and is not affiliated with Allrecipes.com.</span>
+    </div>
+  </div>
+</footer>
+<script>
+"use strict";
+/* ============ DATA — original recipes, prices = estimated cost of the amount used (US supermarkets, Nov 2025) ============ */
+var RECIPES=[
+{id:"buttermilk-pancakes",title:"Fluffy Buttermilk Pancakes",cat:"Breakfast",img:"assets/pancakes.jpg",alt:"A tall stack of fluffy buttermilk pancakes with butter and maple syrup",
+ desc:"Tall, golden, cloud-soft pancakes — the Saturday-morning standard in American homes, made from a one-bowl batter that takes ten minutes.",
+ prep:10,cook:15,servings:4,diff:"Easy",rating:4.9,reviews:2314,tags:["vegetarian","kid-friendly","freezer-friendly"],
+ ings:[
+  {q:2,u:"cups",n:"all-purpose flour",p:0.45},{q:2,u:"tbsp",n:"granulated sugar",p:0.06},{q:2,u:"tsp",n:"baking powder",p:0.10},
+  {q:0.5,u:"tsp",n:"baking soda",p:0.03},{q:0.5,u:"tsp",n:"fine salt",p:0.02},{q:2,u:"cups",n:"buttermilk",p:1.10},
+  {q:2,u:"",n:"large eggs",p:0.70},{q:4,u:"tbsp",n:"unsalted butter, melted",p:0.60},{q:1,u:"tsp",n:"vanilla extract",p:0.35},
+  {q:0.5,u:"cup",n:"maple syrup, for serving",p:1.19}],
+ steps:[
+  ["Whisk the dry ingredients","In a large bowl, whisk the flour, sugar, baking powder, baking soda and salt until evenly combined."],
+  ["Mix the wet ingredients","In a second bowl, whisk the buttermilk, eggs, melted butter and vanilla."],
+  ["Combine — gently","Pour the wet mixture into the dry and stir just until no dry flour remains. Lumps are fine; over-mixing makes tough pancakes. Rest the batter 5 minutes."],
+  ["Heat the pan","Warm a nonstick skillet or griddle over medium heat and lightly grease it. The pan is ready when a drop of water sizzles."],
+  ["Cook the pancakes","Pour ⅓ cup batter per pancake. Cook 2–3 minutes, until bubbles cover the surface and the edges look set, then flip and cook 1–2 minutes more until deep golden."],
+  ["Serve","Stack high, add butter, and pour over warm maple syrup. Leftovers freeze well between sheets of parchment."]],
+ nutri:{cal:430,protein:11,carbs:62,fat:15,fiber:2,sugar:24,sodium:640},
+ tip:"Cold buttermilk straight from the fridge dulls the rise. Let it sit on the counter for 15 minutes before mixing for the tallest stack."},
+{id:"cheeseburger",title:"Classic All-American Cheeseburger",cat:"Dinner",img:"assets/burger.jpg",alt:"A homemade beef cheeseburger with melted cheddar, lettuce, tomato, onion and pickles",
+ desc:"A juicy smashed-seasoned beef patty with properly melted cheddar, crisp lettuce and a toasted bun — the backyard and diner classic, done right at home for a third of the takeout price.",
+ prep:15,cook:10,servings:4,diff:"Easy",rating:4.9,reviews:3102,tags:["grill","kid-friendly","30-minute"],
+ ings:[
+  {q:1.5,u:"lb",n:"ground beef, 80/20",p:8.24},{q:4,u:"",n:"brioche burger buns",p:2.50},{q:4,u:"slices",n:"cheddar cheese",p:1.00},
+  {q:4,u:"leaves",n:"green leaf lettuce",p:0.60},{q:1,u:"",n:"large tomato, sliced",p:0.80},{q:0.5,u:"",n:"red onion, sliced",p:0.40},
+  {q:12,u:"",n:"dill pickle chips",p:0.49},{q:2,u:"tbsp",n:"mayonnaise",p:0.20},{q:2,u:"tbsp",n:"ketchup",p:0.20},
+  {q:1,u:"tsp",n:"kosher salt and black pepper",p:0.05}],
+ steps:[
+  ["Form the patties","Divide the beef into 4 equal portions and shape into patties about ½ inch wider than the buns. Press a shallow thumb dent into the center of each so they stay flat. Season generously with salt and pepper."],
+  ["Toast the buns","Toast the cut sides of the buns in a dry skillet or on the grill until golden, about 1 minute. Set aside."],
+  ["Sear the patties","Cook the patties in a screaming-hot cast-iron skillet or on the grill, 3–4 minutes per side, until nicely crusted and cooked to your liking."],
+  ["Melt the cheese","Lay a slice of cheddar on each patty for the last minute of cooking and cover the pan briefly so it melts properly."],
+  ["Build the burgers","Sauce both bun halves with mayo and ketchup. Bottom bun, lettuce, tomato, patty, pickles, onion, top bun."],
+  ["Rest and serve","Rest 2 minutes so the juices settle, then serve immediately with fries or a simple salad."]],
+ nutri:{cal:650,protein:38,carbs:34,fat:39,fiber:2,sugar:8,sodium:980},
+ tip:"Never press the patties down with the spatula while they cook — you squeeze out the juice. The thumb dent does all the anti-puffing work for you."},
+{id:"spaghetti-meat-sauce",title:"Spaghetti with Hearty Meat Sauce",cat:"Dinner",img:"assets/spaghetti.jpg",alt:"A bowl of spaghetti tossed in rich beef meat sauce with grated parmesan",
+ desc:"The weeknight pasta that feeds a crowd: a rich, slow-simmered beef and tomato sauce over perfectly salted spaghetti, finished with real parmesan.",
+ prep:15,cook:35,servings:6,diff:"Easy",rating:4.8,reviews:1987,tags:["family dinner","meal prep","freezer-friendly"],
+ ings:[
+  {q:1,u:"lb",n:"spaghetti",p:1.25},{q:1,u:"lb",n:"ground beef, 80/20",p:5.49},{q:1,u:"can (28 oz)",n:"crushed tomatoes",p:1.90},
+  {q:1,u:"",n:"yellow onion, diced",p:0.70},{q:3,u:"cloves",n:"garlic, minced",p:0.30},{q:2,u:"tbsp",n:"olive oil",p:0.35},
+  {q:2,u:"tsp",n:"Italian seasoning",p:0.15},{q:0.5,u:"cup",n:"grated parmesan, plus more to serve",p:1.52},
+  {q:1,u:"tsp",n:"sugar",p:0.03},{q:1,u:"tsp",n:"salt and black pepper",p:0.07}],
+ steps:[
+  ["Start the pasta water","Bring a large pot of well-salted water to a boil — it should taste like the sea. This seasons the pasta itself."],
+  ["Brown the beef","Heat the olive oil in a large pot over medium-high heat. Brown the beef, breaking it into crumbles, 6–8 minutes. Drain excess fat if you like."],
+  ["Build the sauce","Add the onion and cook 4 minutes until soft. Stir in the garlic for 30 seconds, then the crushed tomatoes, Italian seasoning, sugar, salt and pepper."],
+  ["Simmer","Reduce to low and simmer the sauce 25 minutes, stirring now and then, until thick and rich. Stir in the parmesan at the end."],
+  ["Cook the spaghetti","Cook the spaghetti 1 minute shy of the package time. Reserve a mug of pasta water before draining."],
+  ["Toss and serve","Toss the drained spaghetti through the sauce with a splash of pasta water until glossy. Serve in warm bowls with extra parmesan."]],
+ nutri:{cal:540,protein:29,carbs:66,fat:17,fiber:5,sugar:9,sodium:720},
+ tip:"The sauce freezes beautifully for 3 months. Double the batch on Sunday and future-you gets a $2 dinner on the busiest night of the month."},
+{id:"mac-and-cheese",title:"Creamy Baked Mac and Cheese",cat:"Dinner",img:"assets/mac-cheese.webp",alt:"Baked macaroni and cheese with a golden crust being scooped from a white dish",
+ desc:"Elbow pasta folded through a silky three-cheese sauce and baked under a golden crust — the side dish that regularly steals the whole dinner.",
+ prep:15,cook:30,servings:8,diff:"Medium",rating:4.9,reviews:2756,tags:["vegetarian","comfort food","potluck"],
+ ings:[
+  {q:1,u:"lb",n:"elbow macaroni",p:1.20},{q:4,u:"cups",n:"shredded sharp cheddar (16 oz)",p:3.99},{q:1,u:"cup",n:"shredded mozzarella",p:1.00},
+  {q:3,u:"cups",n:"whole milk",p:0.95},{q:0.5,u:"cup",n:"unsalted butter",p:1.20},{q:0.25,u:"cup",n:"all-purpose flour",p:0.10},
+  {q:0.5,u:"cup",n:"panko breadcrumbs",p:0.40},{q:1,u:"tsp",n:"mustard powder and paprika",p:0.15},{q:1,u:"tsp",n:"salt and black pepper",p:0.05}],
+ steps:[
+  ["Cook the pasta short","Boil the macaroni in salted water 2 minutes less than the package says — it finishes in the oven. Drain and set aside. Heat the oven to 375°F (190°C)."],
+  ["Make the roux","Melt the butter in a large pot over medium heat. Whisk in the flour and cook 1 minute, stirring, until it smells faintly nutty."],
+  ["Build the sauce","Slowly whisk in the milk. Simmer 4–5 minutes, whisking, until the sauce thickly coats a spoon. Season with mustard powder, paprika, salt and pepper."],
+  ["Add the cheese","Off the heat, stir in the cheddar and mozzarella in handfuls until melted and glossy."],
+  ["Assemble","Fold the pasta through the sauce and pour into a buttered 9×13-inch baking dish. Scatter the panko over the top."],
+  ["Bake","Bake 20–25 minutes until bubbling and golden on top. Rest 10 minutes before serving so the sauce sets."]],
+ nutri:{cal:470,protein:19,carbs:44,fat:24,fiber:2,sugar:6,sodium:610},
+ tip:"Shred your own cheese from a block. Pre-shredded cheese is coated with anti-caking starch that can make the sauce grainy instead of silky."},
+{id:"grilled-cheese",title:"Perfect Grilled Cheese Sandwich",cat:"Lunch",img:"assets/grilled-cheese.jpg",alt:"A grilled cheese sandwich cut in half with melted cheese stretching between the halves",
+ desc:"Crisp, shattering sourdough, a long cheese pull, and the mayo-on-the-outside trick that makes the best grilled cheese in America.",
+ prep:5,cook:8,servings:2,diff:"Easy",rating:4.8,reviews:1544,tags:["vegetarian","15-minute","kid-friendly"],
+ ings:[
+  {q:4,u:"slices",n:"sourdough bread, thick-cut",p:1.20},{q:4,u:"slices",n:"sharp cheddar cheese",p:1.00},
+  {q:2,u:"tbsp",n:"unsalted butter, softened",p:0.30},{q:1,u:"tbsp",n:"mayonnaise",p:0.16}],
+ steps:[
+  ["Prep the bread","Spread a thin layer of mayonnaise on one side of each bread slice — this is the side that hits the pan and turns deeply golden. Butter goes inside for flavor."],
+  ["Build","Layer the cheddar between two slices, mayo-side out. You should have 2 sandwiches."],
+  ["Cook low and slow","Cook in a skillet over medium-low heat, 3–4 minutes per side, pressing gently, until the crust is deep golden and the cheese fully melted."],
+  ["Rest and slice","Rest 1 minute (the cheese is lava), slice on the diagonal, and serve — ideally with tomato soup for dunking."]],
+ nutri:{cal:440,protein:15,carbs:36,fat:26,fiber:2,sugar:3,sodium:690},
+ tip:"Low heat is the whole secret. High heat burns the bread before the cheese melts; medium-low gives you a crisp crust and a full cheese pull."},
+{id:"beef-tacos",title:"Shredded Beef Tacos",cat:"Dinner",img:"assets/tacos.png",alt:"Crisp corn tacos filled with shredded beef, pico de gallo and crumbled cheese, with guacamole and lime",
+ desc:"Slow-braised shredded beef piled into crisp corn shells with fresh pico de gallo, cotija and lime — taco night the way American families actually do it.",
+ prep:20,cook:180,servings:6,diff:"Medium",rating:4.9,reviews:1208,tags:["slow cooker","gluten-free","crowd"],
+ ings:[
+  {q:2.5,u:"lb",n:"beef chuck roast",p:14.98},{q:12,u:"",n:"corn taco shells",p:1.10},{q:1,u:"",n:"yellow onion, quartered",p:0.70},
+  {q:4,u:"cloves",n:"garlic",p:0.35},{q:1,u:"cup",n:"beef broth",p:0.60},{q:2,u:"tbsp",n:"chili powder and cumin",p:0.30},
+  {q:2,u:"",n:"tomatoes, diced",p:1.20},{q:1,u:"bunch",n:"fresh cilantro, chopped",p:0.60},{q:0.75,u:"cup",n:"crumbled cotija cheese",p:1.80},
+  {q:1,u:"",n:"lime, cut in wedges",p:0.51},{q:1,u:"cup",n:"guacamole, for serving",p:2.52}],
+ steps:[
+  ["Season the beef","Rub the chuck roast all over with the chili powder, cumin, 2 tsp salt and 1 tsp black pepper."],
+  ["Braise low and slow","Place the beef in a Dutch oven or slow cooker with the onion, garlic and beef broth. Cover and cook at 300°F (150°C) for 3 hours (or on LOW in a slow cooker for 7–8 hours) until it shreds easily with a fork."],
+  ["Shred and crisp","Shred the beef, discarding large fat pieces. For crispy edges, spread it on a sheet pan and broil 4–5 minutes. Moisten with a little braising liquid."],
+  ["Make the pico","Stir the diced tomatoes with half the cilantro, a pinch of salt and a squeeze of lime."],
+  ["Warm the shells","Warm the taco shells in a 350°F (175°C) oven for 4 minutes so they stay crisp."],
+  ["Assemble","Fill each shell with beef, pico de gallo, cotija and cilantro. Serve with guacamole and lime wedges."]],
+ nutri:{cal:480,protein:34,carbs:28,fat:25,fiber:4,sugar:4,sodium:560},
+ tip:"The braised beef keeps 4 days in the fridge and freezes for 3 months — cook once, and taco night, burrito bowls and quesadillas are all covered."},
+{id:"beef-chili",title:"Classic Beef Chili",cat:"Dinner",img:"assets/chili.webp",alt:"A hearty bowl of beef chili topped with sour cream, cheese and cilantro",
+ desc:"Thick, smoky and deeply spiced, with two kinds of beans — the game-day and cold-weather pot that costs under $3 a bowl and tastes better the next day.",
+ prep:15,cook:45,servings:8,diff:"Easy",rating:4.8,reviews:2210,tags:["one pot","meal prep","gluten-free"],
+ ings:[
+  {q:2,u:"lb",n:"ground beef, 80/20",p:10.98},{q:2,u:"cans (15 oz)",n:"kidney beans, drained",p:1.90},{q:1,u:"can (15 oz)",n:"black beans, drained",p:0.95},
+  {q:1,u:"can (28 oz)",n:"diced tomatoes",p:1.90},{q:1,u:"",n:"yellow onion, diced",p:0.70},{q:1,u:"",n:"green bell pepper, diced",p:1.10},
+  {q:3,u:"cloves",n:"garlic, minced",p:0.30},{q:3,u:"tbsp",n:"chili powder, cumin and smoked paprika",p:0.50},
+  {q:2,u:"tbsp",n:"tomato paste",p:0.40},{q:1,u:"cup",n:"beef broth",p:0.79},
+  {q:0.5,u:"cup",n:"sour cream and shredded cheddar, to serve",p:1.60}],
+ steps:[
+  ["Brown the beef","In a large heavy pot over medium-high heat, brown the beef in batches, 6–8 minutes. Spoon off all but 2 tablespoons of fat."],
+  ["Soften the vegetables","Add the onion and bell pepper; cook 5 minutes until soft. Stir in the garlic and tomato paste for 1 minute."],
+  ["Spice it","Add the chili powder, cumin and smoked paprika and stir 30 seconds until fragrant — blooming the spices in the fat deepens the flavor."],
+  ["Simmer","Add the tomatoes, beans and broth. Simmer gently 35–40 minutes, stirring occasionally, until thick enough that a spoon leaves a trail."],
+  ["Season and serve","Salt to taste. Ladle into bowls and top with sour cream and cheddar. Cornbread on the side is not optional in spirit."]],
+ nutri:{cal:390,protein:30,carbs:28,fat:17,fiber:9,sugar:6,sodium:680},
+ tip:"Chili is always better on day two. Make it the night before, chill it, and reheat gently — the spices meld and the texture turns silky."},
+{id:"choc-chip-cookies",title:"Chewy Chocolate Chip Cookies",cat:"Desserts",img:"assets/cookies.jpg",alt:"A tall stack of golden chocolate chip cookies",
+ desc:"Crisp edges, chewy centers, puddles of chocolate — the definitive American cookie, with the brown-butter and chill-time tricks that make it bakery-level.",
+ prep:15,cook:11,servings:12,diff:"Easy",rating:4.9,reviews:3405,tags:["baking","kid-friendly","freezer-friendly"],
+ ings:[
+  {q:1,u:"cup",n:"unsalted butter",p:2.40},{q:1,u:"cup",n:"brown sugar, packed",p:0.55},{q:0.5,u:"cup",n:"granulated sugar",p:0.30},
+  {q:2,u:"",n:"large eggs",p:0.70},{q:2,u:"tsp",n:"vanilla extract",p:0.50},{q:2.25,u:"cups",n:"all-purpose flour",p:0.55},
+  {q:1,u:"tsp",n:"baking soda and fine salt",p:0.08},{q:2,u:"cups",n:"semi-sweet chocolate chips",p:3.20}],
+ steps:[
+  ["Melt the butter","Melt the butter and let it cool 10 minutes. Melted butter is what makes these chewy instead of cakey."],
+  ["Mix the dough","Whisk the butter with both sugars until glossy. Beat in the eggs and vanilla, then fold in the flour, baking soda and salt until just combined. Fold in the chocolate chips."],
+  ["Chill","Chill the dough at least 30 minutes (overnight is better). This stops spreading and deepens the toffee flavor."],
+  ["Bake","Scoop 3-tablespoon balls onto a parchment-lined sheet, spaced well apart. Bake at 350°F (175°C) for 10–12 minutes, until the edges are golden but the centers look slightly underdone."],
+  ["Finish","Bang the pan once on the counter, sprinkle with flaky salt if you have it, and cool on the pan 10 minutes. Makes 24 cookies; serving is 2."]],
+ nutri:{cal:290,protein:3,carbs:38,fat:14,fiber:2,sugar:26,sodium:180},
+ tip:"Freeze scooped dough balls on a tray, then bag them. Bake from frozen, adding 2 minutes — fresh cookies on demand, forever."},
+{id:"caesar-salad",title:"Grilled Chicken Caesar Salad",cat:"Lunch",img:"assets/caesar.jpg",alt:"Grilled chicken Caesar salad with croutons, parmesan and dressing",
+ desc:"Char-grilled chicken over crisp romaine with a garlicky homemade Caesar dressing, real parmesan and crunchy croutons — the lunch that eats like a dinner.",
+ prep:15,cook:12,servings:4,diff:"Easy",rating:4.7,reviews:986,tags:["high-protein","30-minute","meal prep"],
+ ings:[
+  {q:1.5,u:"lb",n:"chicken breast",p:6.73},{q:2,u:"heads",n:"romaine lettuce",p:2.60},{q:0.75,u:"cup",n:"shaved parmesan",p:2.20},
+  {q:1,u:"cup",n:"garlic croutons",p:1.00},{q:0.5,u:"cup",n:"Caesar dressing",p:1.79},{q:1,u:"",n:"lemon, halved",p:0.52},
+  {q:1,u:"tbsp",n:"olive oil",p:0.30},{q:1,u:"tsp",n:"garlic powder, salt and pepper",p:0.10}],
+ steps:[
+  ["Season the chicken","Rub the chicken with olive oil, garlic powder, salt and pepper. Rest at room temperature 10 minutes."],
+  ["Grill","Grill or sear in a hot skillet 5–6 minutes per side, until the thickest part reaches 165°F (74°C). Rest 5 minutes, then slice."],
+  ["Prep the romaine","Chop the romaine into bite-size pieces, wash and dry it very well — dry leaves hold the dressing."],
+  ["Dress the salad","Toss the romaine with the dressing and half the parmesan until every leaf is lightly coated."],
+  ["Serve","Divide between bowls, top with sliced chicken, croutons and the remaining parmesan. Finish with a squeeze of lemon and black pepper."]],
+ nutri:{cal:410,protein:42,carbs:12,fat:21,fiber:3,sugar:3,sodium:840},
+ tip:"A salad spinner is the difference between a crisp Caesar and a soggy one. If you don't own one, pat the leaves dry with a clean kitchen towel."},
+{id:"meatloaf",title:"Homestyle Meatloaf with Tangy Glaze",cat:"Dinner",img:"assets/meatloaf.webp",alt:"Thick slices of homestyle meatloaf with a glossy tomato glaze on a board",
+ desc:"Moist, tender slices under a sweet-tangy ketchup glaze — the Sunday dinner that defined American comfort food, with leftovers built for sandwiches.",
+ prep:15,cook:60,servings:8,diff:"Easy",rating:4.8,reviews:1677,tags:["family dinner","meal prep","comfort food"],
+ ings:[
+  {q:2,u:"lb",n:"ground beef, 80/20",p:10.98},{q:1,u:"cup",n:"plain breadcrumbs",p:0.60},{q:2,u:"",n:"large eggs",p:0.70},
+  {q:0.5,u:"cup",n:"whole milk",p:0.25},{q:1,u:"",n:"yellow onion, finely diced",p:0.70},{q:0.75,u:"cup",n:"ketchup, divided",p:0.80},
+  {q:1,u:"tbsp",n:"Worcestershire sauce",p:0.20},{q:1,u:"tsp",n:"garlic powder, salt and pepper",p:0.25}],
+ steps:[
+  ["Heat the oven and mix","Heat the oven to 350°F (175°C). In a large bowl, combine the beef, breadcrumbs, eggs, milk, onion, ¼ cup of the ketchup, Worcestershire and seasonings. Mix with your hands just until combined — over-mixing makes it dense."],
+  ["Shape the loaf","Shape into a loaf on a parchment-lined sheet pan (a pan gives better crust than a loaf tin)."],
+  ["First bake","Bake 40 minutes."],
+  ["Glaze","Stir the remaining ½ cup ketchup with 1 tablespoon brown sugar if you have it. Spread over the loaf."],
+  ["Finish baking","Bake 15–20 minutes more, until the center reaches 160°F (71°C) and the glaze is shiny and caramelized at the edges."],
+  ["Rest and slice","Rest 10 minutes before slicing into thick slabs. Serve with mashed potatoes and green beans."]],
+ nutri:{cal:360,protein:27,carbs:16,fat:20,fiber:1,sugar:8,sodium:720},
+ tip:"Day-two meatloaf sandwiches — cold slice, white bread, mayo, iceberg — are half the reason to make this. Slice an extra portion before dinner if you want leftovers at all."},
+{id:"chicken-stir-fry",title:"Easy Chicken Stir-Fry with Rice",cat:"Dinner",img:"assets/stirfry.png",alt:"Chicken stir-fry with broccoli and peppers served over rice in a bowl",
+ desc:"Glossy garlic-ginger chicken and crisp vegetables over rice — faster than takeout delivery and roughly half the cost of the same order.",
+ prep:15,cook:12,servings:4,diff:"Easy",rating:4.7,reviews:1319,tags:["30-minute","weeknight","dairy-free"],
+ ings:[
+  {q:1.25,u:"lb",n:"chicken breast, sliced",p:5.61},{q:3,u:"cups",n:"broccoli florets",p:1.80},{q:2,u:"",n:"bell peppers, sliced",p:2.20},
+  {q:2,u:"",n:"carrots, julienned",p:0.60},{q:2,u:"cups",n:"jasmine rice, uncooked",p:0.90},{q:0.33,u:"cup",n:"soy sauce",p:0.50},
+  {q:3,u:"cloves",n:"garlic and fresh ginger, grated",p:0.50},{q:1,u:"tbsp",n:"sesame oil",p:0.40},{q:1,u:"tbsp",n:"cornstarch",p:0.10},
+  {q:1,u:"tbsp",n:"brown sugar",p:0.07}],
+ steps:[
+  ["Start the rice","Cook the jasmine rice according to the package directions and keep warm."],
+  ["Mix the sauce","Whisk the soy sauce, cornstarch, brown sugar and ⅓ cup water until smooth."],
+  ["Sear the chicken","Toss the chicken with a pinch of salt. Sear in a very hot wok or skillet with a little oil, 4–5 minutes, until golden and cooked through. Remove to a plate."],
+  ["Stir-fry the vegetables","In the same pan, stir-fry the broccoli, peppers and carrots 3–4 minutes until crisp-tender. Add the garlic and ginger for the last 30 seconds."],
+  ["Sauce and finish","Return the chicken, pour in the sauce and toss 1–2 minutes until glossy and thickened. Drizzle with sesame oil."],
+  ["Serve","Spoon over the rice and serve immediately, with extra soy sauce at the table."]],
+ nutri:{cal:450,protein:36,carbs:52,fat:10,fiber:4,sugar:9,sodium:890},
+ tip:"Cut everything before the pan gets hot — stir-frying waits for no one. Group the ingredients on one plate in the order they go in."},
+{id:"avocado-toast",title:"Avocado Toast with Fried Egg",cat:"Breakfast",img:"assets/avocado-toast.webp",alt:"Avocado toast topped with a fried egg on sourdough",
+ desc:"The café breakfast America fell for — smashed lemony avocado on thick sourdough with a crispy-edged fried egg — for about a fifth of the coffee-shop price.",
+ prep:8,cook:4,servings:2,diff:"Easy",rating:4.6,reviews:743,tags:["vegetarian","15-minute","healthy"],
+ ings:[
+  {q:2,u:"slices",n:"sourdough bread, thick-cut",p:0.90},{q:1,u:"",n:"ripe avocado",p:1.25},{q:2,u:"",n:"large eggs",p:0.70},
+  {q:0.5,u:"",n:"lemon",p:0.25},{q:1,u:"pinch",n:"chili flakes, flaky salt and pepper",p:0.10}],
+ steps:[
+  ["Toast the bread","Toast the sourdough until deeply golden and crisp — it must hold up under the avocado."],
+  ["Smash the avocado","Smash the avocado with a fork, lemon juice, salt and pepper. Keep it chunky, not smooth."],
+  ["Fry the eggs","Fry the eggs in a little hot oil until the whites are set with lacy, crisp edges and the yolks are still runny, about 3 minutes."],
+  ["Assemble","Pile the avocado onto the toast, top with an egg, and finish with chili flakes and flaky salt. Serve immediately."]],
+ nutri:{cal:320,protein:11,carbs:28,fat:19,fiber:7,sugar:2,sodium:380},
+ tip:"The squeeze test for avocados: it should yield to gentle pressure like a tennis ball. If you buy firm ones, a paper bag with a banana ripens them overnight."},
+{id:"apple-pie",title:"Classic American Apple Pie",cat:"Desserts",img:"assets/apple-pie.jpg",alt:"A slice of classic American apple pie with vanilla ice cream",
+ desc:"Flaky double crust, cinnamon-spiced apples that hold their shape, and the scoop of vanilla ice cream that is practically the law. The most American dessert there is.",
+ prep:30,cook:55,servings:8,diff:"Medium",rating:4.9,reviews:2043,tags:["baking","holiday","make-ahead"],
+ ings:[
+  {q:6,u:"",n:"Granny Smith apples (about 3 lb)",p:4.47},{q:2,u:"",n:"refrigerated pie crusts (1 package)",p:3.30},
+  {q:0.75,u:"cup",n:"granulated sugar",p:0.46},{q:0.25,u:"cup",n:"all-purpose flour",p:0.10},{q:1.5,u:"tsp",n:"ground cinnamon",p:0.20},
+  {q:3,u:"tbsp",n:"unsalted butter, diced",p:0.90},{q:1,u:"tbsp",n:"lemon juice",p:0.30},{q:1,u:"",n:"large egg, for egg wash",p:0.35}],
+ steps:[
+  ["Prep the apples","Peel, core and slice the apples ¼ inch thick. Toss with the lemon juice, sugar, flour and cinnamon and rest 20 minutes so the juices start flowing."],
+  ["Line the dish","Fit one crust into a 9-inch pie dish, letting the excess hang over the edge."],
+  ["Fill","Pile in the apples and their juices, mounding them high in the center. Dot with the butter."],
+  ["Top crust","Lay the second crust over the top. Trim, fold the edges under and crimp. Cut 4–5 vents in the top and brush with beaten egg."],
+  ["Bake","Bake at 425°F (220°C) for 20 minutes, then reduce to 375°F (190°C) and bake 35–40 minutes more, until the crust is deep golden and the filling bubbles through the vents. Shield the edges with foil if they brown too fast."],
+  ["Cool — really","Cool at least 3 hours so the filling sets into clean slices. Serve warm with vanilla ice cream."]],
+ nutri:{cal:340,protein:3,carbs:52,fat:14,fiber:4,sugar:30,sodium:210},
+ tip:"A mix of apples bakes best: Granny Smith for tart structure plus a couple of Honeycrisp or Gala for sweetness. All one kind can turn bland or mushy."}
+];
+var STAPLES=[
+["Ground beef, 80/20","1 lb","$5.49"],["Chicken breast, boneless","1 lb","$4.49"],["Beef chuck roast","1 lb","$5.99"],
+["Large eggs, grade A","1 dozen","$4.19"],["Whole milk","1 gallon","$3.89"],["Unsalted butter","1 stick (4 oz)","$1.20"],
+["Shredded cheddar cheese","8 oz bag","$1.99"],["Sliced cheddar cheese","12 slices","$2.49"],["All-purpose flour","5 lb bag","$2.79"],
+["Granulated sugar","4 lb bag","$3.29"],["Spaghetti / pasta","1 lb box","$1.25"],["Jasmine rice","2 lb bag","$2.99"],
+["Canned crushed tomatoes","28 oz can","$1.90"],["Canned beans","15 oz can","$0.95"],["Yellow onions","1 lb","$0.99"],
+["Russet potatoes","1 lb","$0.89"],["Avocados","each","$1.25"],["Romaine lettuce","per head","$1.30"],
+["Burger buns","4-pack","$2.50"],["Sourdough loaf","1 lb loaf","$3.60"],["Chocolate chips","12 oz bag","$3.20"],
+["Maple syrup, pure","12 fl oz","$6.49"],["Olive oil","16.9 fl oz","$5.99"],["Parmesan, grated wedge","per oz","$0.95"]];
+</script>
+<script>
+"use strict";
+var app=document.getElementById("app");
+function money(n){return "$"+n.toFixed(2);}
+function totalCost(r){return r.ings.reduce(function(s,i){return s+i.p;},0);}
+function perServing(r){return totalCost(r)/r.servings;}
+function totalTime(r){return r.prep+r.cook;}
+function fmtTime2(m){if(m<60)return m+" min";var h=Math.floor(m/60),r=m%60;return h+" hr"+(r?" "+r+" min":"");}
+function stars(r){var full=Math.round(r.rating);var s="";for(var i=0;i<5;i++)s+=i<full?"★":"☆";return s;}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+var FRAC={0.25:"¼",0.33:"⅓",0.5:"½",0.67:"⅔",0.75:"¾"};
+function fmtQty(q){
+  if(!q&&q!==0)return "";
+  var whole=Math.floor(q),rem=Math.round((q-whole)*100)/100,best=null,bd=1;
+  for(var k in FRAC){var d=Math.abs(rem-parseFloat(k));if(d<bd){bd=d;best=k;}}
+  if(bd<0.04&&best){return (whole?whole+" ":"")+FRAC[best];}
+  if(Math.abs(rem)<0.04)return String(whole);
+  if(Math.abs(rem-1)<0.04)return String(whole+1);
+  return (Math.round(q*100)/100).toString();
+}
+function cardHTML(r){
+  return '<article class="card"><a class="imglink" href="#/recipe/'+r.id+'"><img src="'+r.img+'" alt="'+esc(r.alt)+'" loading="lazy"></a>'+
+  '<div class="card-body"><span class="cat">'+r.cat+'</span><h3><a href="#/recipe/'+r.id+'">'+r.title+'</a></h3>'+
+  '<p>'+esc(r.desc)+'</p>'+
+  '<div class="meta-row"><span>⏱ <b>'+fmtTime2(totalTime(r))+'</b></span><span>🍽 <b>'+r.servings+' servings</b></span><span>Level <b>'+r.diff+'</b></span></div>'+
+  '<div class="price-row"><div class="per">'+money(perServing(r))+' <small>per serving</small></div><div class="total">Total recipe cost<br><b>'+money(totalCost(r))+'</b></div></div>'+
+  '</div></article>';
+}
+function setNav(name){
+  var links=document.querySelectorAll("#mainnav a");
+  for(var i=0;i<links.length;i++){links[i].classList.toggle("active",links[i].getAttribute("data-nav")===name);}
+}
+function viewHome(){
+  setNav("home");
+  var featIds=["cheeseburger","buttermilk-pancakes","mac-and-cheese","beef-chili","beef-tacos","choc-chip-cookies"];
+  var featured=featIds.map(function(id){return RECIPES.filter(function(r){return r.id===id;})[0];});
+  var cheap=RECIPES.filter(function(r){return r.cat==="Dinner";}).sort(function(a,b){return perServing(a)-perServing(b);}).slice(0,3);
+  var cats=[["Breakfast","Pancakes, eggs and the morning classics"],["Lunch","Sandwiches, salads and midday staples"],["Dinner","The meals America sits down to"],["Desserts","Cookies, pies and sweet finishes"]];
+  var tiles=cats.map(function(c){var n=RECIPES.filter(function(r){return r.cat===c[0];}).length;
+    return '<button class="tile" data-cat="'+c[0]+'"><h3>'+c[0]+'</h3><p>'+c[1]+'</p><p class="n">'+n+' recipes →</p></button>';}).join("");
+  app.innerHTML=
+  '<section class="hero"><div><h1>The food America cooks <em>every day</em> — with the price on the plate.</h1>'+
+  '<p class="lede">Pancakes on Saturday, tacos on Tuesday, chili on game day. Every recipe here comes with full ingredients, step-by-step instructions, nutrition — and an honest estimated cost for the whole dish and for every serving.</p>'+
+  '<a class="btn" href="#/recipes">Browse all '+RECIPES.length+' recipes</a> <a class="btn ghost" href="#/prices">See grocery prices</a>'+
+  '<div class="hero-stats"><div><b>'+RECIPES.length+'</b><span>Full recipes</span></div><div><b>'+money(RECIPES.reduce(function(s,r){return s+perServing(r);},0)/RECIPES.length)+'</b><span>Avg. cost / serving</span></div><div><b>100%</b><span>Priced ingredients</span></div></div></div>'+
+  '<div class="hero-img"><img src="assets/burger.jpg" alt="A homemade all-American cheeseburger with melted cheddar and fresh vegetables"><div class="hero-badge">🍔 <b>Classic Cheeseburger</b> — just '+money(perServing(RECIPES[1]))+' per serving at home</div></div></section>'+
+  '<section class="block"><div class="sec-head"><h2>Browse by meal</h2></div><div class="tiles">'+tiles+'</div></section>'+
+  '<section class="block"><div class="sec-head"><h2>American classics</h2><a href="#/recipes">View all recipes →</a></div><p class="sec-sub">The dishes that define everyday American cooking — each one priced ingredient by ingredient.</p><div class="grid">'+featured.map(cardHTML).join("")+'</div></section>'+
+  '<div class="band"><div class="wrap band-grid"><div><h3>Every ingredient, priced</h3><p>No vague “pantry staples” hand-waving. Each recipe lists what every ingredient costs for the amount you actually use, based on typical US supermarket prices.</p></div><div><h3>Scale any recipe</h3><p>Feeding two or twelve? Open any recipe and tap the serving scaler — quantities and costs update instantly, so the shopping list is always right.</p></div><div><h3>Written for real weeknights</h3><p>Realistic times, normal equipment, ingredients from any regular supermarket. If a dish takes 30 minutes, it takes 30 minutes.</p></div></div></div>'+
+  '<section class="block"><div class="sec-head"><h2>Cheapest dinners first</h2><a href="#/recipes?sort=cheap">Sort all by price →</a></div><p class="sec-sub">Proof that a full home-cooked plate in the USA can cost less than a coffee.</p><div class="grid">'+cheap.map(cardHTML).join("")+'</div></section>';
+  var t=app.querySelectorAll(".tile");
+  for(var i=0;i<t.length;i++){t[i].addEventListener("click",function(){location.hash="#/recipes?cat="+encodeURIComponent(this.getAttribute("data-cat"));});}
+  window.scrollTo(0,0);
+}
+var listState={cat:"All",q:"",sort:"featured"};
+function viewRecipes(params){
+  setNav("recipes");
+  if(params.cat)listState.cat=params.cat;
+  if(params.q!==undefined&&params.q!==null)listState.q=params.q;
+  if(params.sort)listState.sort=params.sort;
+  var cats=["All","Breakfast","Lunch","Dinner","Desserts","Under 30 min","Under $2 / serving"];
+  var chips=cats.map(function(c){return '<button class="chip'+(listState.cat===c?" on":"")+'" data-c="'+c+'">'+c+'</button>';}).join("");
+  app.innerHTML='<section class="block"><div class="sec-head"><h2>All recipes</h2></div>'+
+  '<p class="sec-sub">Every recipe includes full ingredients with prices, step-by-step instructions, nutrition and the total cost. '+(listState.q?'Showing results for “'+esc(listState.q)+'”. <a href="#/recipes" id="clearq">Clear search</a>':"")+'</p>'+
+  '<div class="chips">'+chips+'</div>'+
+  '<div class="toolbar"><label>Sort by <select id="sortsel"><option value="featured">Featured</option><option value="cheap">Lowest cost per serving</option><option value="quick">Quickest</option><option value="az">Name A–Z</option></select></label><span class="count" id="rescount"></span></div>'+
+  '<div class="grid" id="resgrid"></div><div class="empty" id="resempty" style="display:none">No recipes match that search yet. Try “beef”, “cheese” or “chicken”.</div></section>';
+  document.getElementById("sortsel").value=listState.sort;
+  var chipEls=app.querySelectorAll(".chip");
+  for(var i=0;i<chipEls.length;i++){chipEls[i].addEventListener("click",function(){listState.cat=this.getAttribute("data-c");renderList();markChips();});}
+  document.getElementById("sortsel").addEventListener("change",function(){listState.sort=this.value;renderList();});
+  var cq=document.getElementById("clearq");if(cq)cq.addEventListener("click",function(e){e.preventDefault();listState.q="";document.getElementById("hq").value="";viewRecipes({});});
+  function markChips(){var els=app.querySelectorAll(".chip");for(var j=0;j<els.length;j++)els[j].classList.toggle("on",els[j].getAttribute("data-c")===listState.cat);}
+  function renderList(){
+    var list=RECIPES.filter(function(r){
+      if(listState.cat==="Under 30 min"&&totalTime(r)>30)return false;
+      if(listState.cat==="Under $2 / serving"&&perServing(r)>=2)return false;
+      if(["Breakfast","Lunch","Dinner","Desserts"].indexOf(listState.cat)>=0&&r.cat!==listState.cat)return false;
+      if(listState.q){var q=listState.q.toLowerCase();var hay=(r.title+" "+r.cat+" "+r.tags.join(" ")+" "+r.ings.map(function(i){return i.n;}).join(" ")).toLowerCase();if(hay.indexOf(q)<0)return false;}
+      return true;
+    });
+    if(listState.sort==="cheap")list.sort(function(a,b){return perServing(a)-perServing(b);});
+    else if(listState.sort==="quick")list.sort(function(a,b){return totalTime(a)-totalTime(b);});
+    else if(listState.sort==="az")list.sort(function(a,b){return a.title.localeCompare(b.title);});
+    else list.sort(function(a,b){return RECIPES.indexOf(a)-RECIPES.indexOf(b);});
+    document.getElementById("resgrid").innerHTML=list.map(cardHTML).join("");
+    document.getElementById("rescount").textContent=list.length+" recipe"+(list.length===1?"":"s");
+    document.getElementById("resempty").style.display=list.length?"none":"block";
+  }
+  renderList();
+  window.scrollTo(0,0);
+}
+function viewRecipe(id){
+  var r=null;for(var i=0;i<RECIPES.length;i++)if(RECIPES[i].id===id)r=RECIPES[i];
+  if(!r){viewRecipes({});return;}
+  setNav("recipes");
+  var servings=r.servings;
+  var nutri=r.nutri;
+  app.innerHTML='<div class="crumb"><a href="#/">Home</a> › <a href="#/recipes">Recipes</a> › <a href="#/recipes?cat='+r.cat+'">'+r.cat+'</a> › '+r.title+'</div>'+
+  '<div class="detail-head"><img src="'+r.img+'" alt="'+esc(r.alt)+'"><div>'+
+  '<span class="cat">'+r.cat+' · '+r.tags.join(" · ")+'</span><h1>'+r.title+'</h1>'+
+  '<p class="desc">'+esc(r.desc)+'</p>'+
+  '<div class="stat-grid"><div class="stat"><b>'+fmtTime2(r.prep)+'</b><span>Prep time</span></div><div class="stat"><b>'+fmtTime2(r.cook)+'</b><span>Cook time</span></div><div class="stat"><b>'+fmtTime2(totalTime(r))+'</b><span>Total time</span></div><div class="stat"><b>'+nutri.cal+' kcal</b><span>Per serving</span></div></div>'+
+  '<div class="cost-box"><div class="row"><span>Total recipe cost</span><span class="big" id="cost-total"></span></div>'+
+  '<div class="row"><span>Cost per serving</span><b id="cost-per"></b></div>'+
+  '<small>Estimated from typical US supermarket prices, Nov 2025. <a href="#/prices">See the price guide</a>.</small>'+
+  '<div class="scaler"><button id="sc-minus" aria-label="Fewer servings">−</button><b id="sc-label"></b><button id="sc-plus" aria-label="More servings">+</button><small>Quantities &amp; prices update as you scale.</small></div></div>'+
+  '</div></div>'+
+  '<div class="detail-cols"><aside class="ing-card"><h2>Ingredients</h2><p class="note">Priced for the amount used in this recipe.</p><div id="ing-list"></div><div class="ing-total"><span>Total</span><span id="ing-total"></span></div></aside>'+
+  '<div><div class="steps"><h2>Step-by-step instructions</h2>'+r.steps.map(function(s,idx){return '<div class="step"><div class="num">'+(idx+1)+'</div><p><b>'+s[0]+'</b>'+s[1]+'</p></div>';}).join("")+'</div>'+
+  '<div class="nutri"><h2>Nutrition per serving</h2><div class="nutri-grid">'+
+  '<div class="stat"><b>'+nutri.cal+'</b><span>Calories</span></div><div class="stat"><b>'+nutri.protein+' g</b><span>Protein</span></div><div class="stat"><b>'+nutri.carbs+' g</b><span>Carbs</span></div><div class="stat"><b>'+nutri.fat+' g</b><span>Fat</span></div>'+
+  '<div class="stat"><b>'+nutri.fiber+' g</b><span>Fiber</span></div><div class="stat"><b>'+nutri.sugar+' g</b><span>Sugar</span></div><div class="stat"><b>'+nutri.sodium+' mg</b><span>Sodium</span></div><div class="stat"><b>'+r.diff+'</b><span>Difficulty</span></div></div>'+
+  '<p style="color:var(--muted);font-size:.85rem">Nutrition is an estimate calculated from standard ingredient values.</p></div>'+
+  '<div class="tip-box"><h3>Cook\u2019s tip</h3><p>'+esc(r.tip)+'</p></div>'+
+  '<p style="margin-top:22px"><a class="btn ghost" href="#/recipes?cat='+r.cat+'">More '+r.cat.toLowerCase()+' recipes →</a></p></div></div>';
+  function renderScale(){
+    var f=servings/r.servings;
+    document.getElementById("sc-label").textContent=servings+" serving"+(servings===1?"":"s");
+    document.getElementById("ing-list").innerHTML=r.ings.map(function(ing){
+      var amt=fmtQty(ing.q*f);var unit=ing.u?" "+ing.u:"";
+      return '<div class="ing-row"><span><span class="amt">'+amt+unit+'</span> '+esc(ing.n)+'</span><span class="pr">'+money(ing.p*f)+'</span></div>';
+    }).join("");
+    var tot=totalCost(r)*f;
+    document.getElementById("ing-total").textContent=money(tot);
+    document.getElementById("cost-total").textContent=money(tot);
+    document.getElementById("cost-per").textContent=money(tot/servings);
+  }
+  document.getElementById("sc-minus").addEventListener("click",function(){if(servings>1){servings--;renderScale();}});
+  document.getElementById("sc-plus").addEventListener("click",function(){if(servings<48){servings++;renderScale();}});
+  renderScale();
+  document.title=r.title+" — Cost "+money(perServing(r))+" per serving | AllrecipesUSA";
+  window.scrollTo(0,0);
+}
+function viewPrices(){
+  setNav("prices");
+  var rows=STAPLES.map(function(s){return "<tr><td>"+s[0]+"</td><td>"+s[1]+"</td><td>"+s[2]+"</td></tr>";}).join("");
+  app.innerHTML='<div class="prose" style="max-width:900px"><h1>US Grocery Price Guide</h1>'+
+  '<p class="dim">These are the typical supermarket prices behind every cost on AllrecipesUSA — checked against large US grocery chains in November 2025. Your store will differ a little; use this table to sanity-check any recipe budget, ours included.</p>'+
+  '<table class="prices"><thead><tr><th>Ingredient</th><th>Pack / unit</th><th>Typical price</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+  '<h2>How recipe costs are worked out</h2><p>Each recipe charges you only for the amount you use. If a recipe needs 2 tablespoons of olive oil from a $5.99 bottle, the recipe carries a few cents of oil — not the whole bottle. Add up the ingredients and you get the recipe total; divide by the servings and you get the cost per serving shown on every card.</p>'+
+  '<h2>Why home cooking wins</h2><p>A restaurant cheeseburger commonly runs $12–$16 in the US before tax and tip. The same burger at home, from this site, costs about '+money(perServing(RECIPES[1]))+' a serving in ingredients. Cooking the classics at home is the single biggest food-budget lever most households have.</p></div>';
+  document.title="US Grocery Price Guide | AllrecipesUSA";window.scrollTo(0,0);
+}
+function viewAbout(){
+  setNav("about");
+  app.innerHTML='<div class="prose"><h1>About AllrecipesUSA</h1>'+
+  '<p>AllrecipesUSA is a small, independent recipe collection built around one simple idea: the food Americans cook every day should come with the full picture — not just a pretty photo, but the real ingredients, the real time it takes, and the real cost of putting it on the table.</p>'+
+  '<h2>What makes us different</h2><ul><li><b>Priced recipes.</b> Every ingredient in every recipe carries an estimated cost, so you know what dinner costs before you shop.</li><li><b>Original recipes.</b> Everything here is written and cooked in our own kitchen in the classic American home style — nothing copied from other recipe sites.</li><li><b>Honest times.</b> Prep and cook times reflect a normal home kitchen, not a TV studio.</li><li><b>Everyday ingredients.</b> If a regular US supermarket does not stock it, it does not go in the recipe.</li></ul>'+
+  '<h2>How prices work</h2><p>Costs are estimates based on typical US supermarket prices in November 2025, listed openly on our <a href="#/prices">Price Guide</a> page. Prices vary by state, store and season, so treat them as a planning guide rather than a quote.</p>'+
+  '<h2>Independence</h2><p>AllrecipesUSA is an independent project and is not affiliated with Allrecipes.com or its publishers. The name simply describes what the site is: all the everyday recipes of the USA, in one place.</p></div>';
+  document.title="About | AllrecipesUSA";window.scrollTo(0,0);
+}
+var FAQS=[
+["How are the recipe prices calculated?","Every recipe lists each ingredient with the estimated cost of the amount the recipe uses, based on typical US supermarket prices in November 2025. The ingredient costs add up to the recipe total, which is divided by the servings to give the cost per serving. Pantry staples are charged at the small amount used, not the full package price."],
+["Are the prices exact?","No — they are careful estimates. Grocery prices vary by state, store and season, so treat the figures as a realistic guide for planning. Our Price Guide page lists the supermarket prices behind every estimate so you can compare them with your own store."],
+["Can I change the number of servings?","Yes. Every recipe page has a serving scaler: tap plus or minus and all ingredient quantities and costs update automatically."],
+["Are the nutrition numbers exact?","They are estimates calculated from standard USDA-style ingredient values for one serving of the finished dish. Use them for general guidance, not medical advice."],
+["Do I need special equipment?","No. Every recipe is written for a normal home kitchen — a skillet, a pot, an oven and basic utensils cover the whole collection."],
+["Can I freeze these recipes?","Many of them, yes — recipes that freeze well are tagged “freezer-friendly”. Chili, meat sauce, shredded beef and cookie dough all freeze for up to 3 months."],
+["Is AllrecipesUSA affiliated with Allrecipes.com?","No. AllrecipesUSA is an independent recipe collection. All recipes here are original, written and tested in our own kitchen."],
+["How do I suggest a recipe?","Use the Contact page and tell us the dish and roughly what you pay for the ingredients — reader suggestions with local prices make the collection better for everyone."]];
+function viewFaq(){
+  setNav("faq");
+  app.innerHTML='<div class="prose"><h1>Frequently asked questions</h1>'+FAQS.map(function(f){return '<div class="faq-item"><details><summary>'+f[0]+'</summary><p>'+f[1]+'</p></details></div>';}).join("")+'</div>';
+  document.title="FAQ | AllrecipesUSA";window.scrollTo(0,0);
+}
+function viewContact(){
+  setNav("contact");
+  app.innerHTML='<div class="prose"><h1>Contact us</h1><p class="dim">Questions about a recipe, a price that looks off in your state, or a dish you want added? Send us a message — the form opens your own email app, addressed to our kitchen inbox.</p>'+
+  '<form class="contact" id="cform"><label>Your name<input required id="cf-name" type="text" placeholder="e.g. Jamie from Ohio"></label>'+
+  '<label>Subject<input required id="cf-sub" type="text" placeholder="e.g. Chili recipe question"></label>'+
+  '<label>Message<textarea required id="cf-msg" rows="6" placeholder="Write your message…"></textarea></label>'+
+  '<button type="submit">Send via email</button></form>'+
+  '<p class="dim" style="margin-top:16px">You can also reach us directly at <a href="mailto:contact@allrecipesusa.github.io">contact@allrecipesusa.github.io</a>.</p></div>';
+  document.getElementById("cform").addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("cf-name").value,s=document.getElementById("cf-sub").value,m=document.getElementById("cf-msg").value;
+    location.href="mailto:contact@allrecipesusa.github.io?subject="+encodeURIComponent(s)+"&body="+encodeURIComponent(m+"\n\n— "+n);
+  });
+  document.title="Contact | AllrecipesUSA";window.scrollTo(0,0);
+}
+function viewPrivacy(){
+  setNav("");
+  app.innerHTML='<div class="prose"><h1>Privacy Policy</h1><p class="dim">Last updated: November 21, 2025</p>'+
+  '<p>AllrecipesUSA is a static recipe website. We keep your data footprint as small as the site itself.</p>'+
+  '<h2>What we collect</h2><p>This website has no accounts, no sign-ups and no comment system. We do not collect names, email addresses or payment details through the site. If you contact us by email, we receive the information you choose to write in that email and use it only to reply.</p>'+
+  '<h2>Cookies and storage</h2><p>The site does not set advertising or tracking cookies and does not store personal information in your browser. Standard server logs (page requested, time, browser type) may be kept by our hosting provider for security and reliability.</p>'+
+  '<h2>Advertising</h2><p>If advertising is shown on this site in the future, ad partners may use cookies to personalize ads. We will update this policy before any such change takes effect.</p>'+
+  '<h2>Third-party links</h2><p>Pages may link to outside websites. We are not responsible for the privacy practices of those sites.</p>'+
+  '<h2>Your choices</h2><p>You can browse the entire site without providing any personal information. For any privacy question, contact us via the <a href="#/contact">Contact page</a>.</p></div>';
+  document.title="Privacy Policy | AllrecipesUSA";window.scrollTo(0,0);
+}
+function viewTerms(){
+  setNav("");
+  app.innerHTML='<div class="prose"><h1>Terms of Use</h1><p class="dim">Last updated: November 21, 2025</p>'+
+  '<h2>Using the recipes</h2><p>All recipes on AllrecipesUSA are provided for personal, non-commercial home cooking. You may print and share links to recipes freely. Republishing recipe text or photos as your own content is not permitted.</p>'+
+  '<h2>Prices and nutrition</h2><p>Ingredient prices are estimates based on typical US supermarket prices in November 2025 and will differ in your store. Nutrition figures are estimates for general information only and are not medical or dietary advice. Always check ingredient labels if you have allergies or dietary restrictions.</p>'+
+  '<h2>Food safety</h2><p>Cooking times and temperatures are guidance for a typical home kitchen. You are responsible for cooking food safely, including reaching safe internal temperatures for meat, poultry and eggs.</p>'+
+  '<h2>Content ownership</h2><p>All text and content on this site is original and owned by AllrecipesUSA unless credited otherwise. AllrecipesUSA is an independent site and is not affiliated with Allrecipes.com.</p>'+
+  '<h2>Changes</h2><p>We may update these terms from time to time; the current version will always be posted on this page.</p></div>';
+  document.title="Terms of Use | AllrecipesUSA";window.scrollTo(0,0);
+}
+function parseHash(){
+  var h=location.hash||"#/";var parts=h.replace(/^#\//,"").split("?");
+  var path=parts[0];var params={};
+  if(parts[1]){parts[1].split("&").forEach(function(kv){var p=kv.split("=");params[decodeURIComponent(p[0])]=decodeURIComponent(p[1]||"");});}
+  return {path:path,params:params};
+}
+function route(){
+  var r=parseHash();
+  document.title="AllrecipesUSA — Everyday American Recipes with Prices & Full Details";
+  if(r.path===""||r.path==="/")viewHome();
+  else if(r.path==="recipes")viewRecipes(r.params);
+  else if(r.path.indexOf("recipe/")===0)viewRecipe(r.path.split("/")[1]);
+  else if(r.path==="prices")viewPrices();
+  else if(r.path==="about")viewAbout();
+  else if(r.path==="faq")viewFaq();
+  else if(r.path==="contact")viewContact();
+  else if(r.path==="privacy")viewPrivacy();
+  else if(r.path==="terms")viewTerms();
+  else viewHome();
+}
+document.getElementById("hsearch").addEventListener("submit",function(e){
+  e.preventDefault();
+  var q=document.getElementById("hq").value.trim();
+  listState.q=q;listState.cat="All";
+  if((location.hash||"").indexOf("#/recipes")===0){viewRecipes({q:q});}
+  else location.hash="#/recipes?q="+encodeURIComponent(q);
+});
+window.addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
