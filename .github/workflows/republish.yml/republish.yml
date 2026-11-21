@@ -1,0 +1,40 @@
+name: Republish site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  republish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename file and insert verification tag
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          src = pathlib.Path("allrecipesusa.html")
+          dst = pathlib.Path("index.html")
+          text = src.read_text(encoding="utf-8")
+          tag = '<meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />'
+          assert tag not in text, "verification tag already present"
+          lines = text.splitlines(keepends=True)
+          for i, line in enumerate(lines):
+              if "<meta charset" in line:
+                  lines.insert(i + 1, tag + "\n")
+                  break
+          else:
+              raise SystemExit("charset meta line not found")
+          dst.write_text("".join(lines), encoding="utf-8")
+          src.unlink()
+          print("renamed to index.html and tag inserted")
+          PY
+      - name: Commit and push
+        run: |
+          git config user.name "telenorsquiztodays"
+          git config user.email "telenorsquiztodays@users.noreply.github.com"
+          git add -A
+          git commit -m "Republish index.html with 2026 prices and restore Google site verification tag"
+          git push
