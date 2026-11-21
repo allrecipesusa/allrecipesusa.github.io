@@ -1,0 +1,34 @@
+name: Republish site
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  republish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename file and add Search Console verification tag
+        run: |
+          git config user.name "telenorsquiztodays"
+          git config user.email "telenorsquiztodays@users.noreply.github.com"
+          git mv allrecipesusa.html index.html
+          python3 - <<'EOF'
+          import io
+          p = "index.html"
+          s = io.open(p, encoding="utf-8").read()
+          assert "google-site-verification" not in s, "verification tag already present"
+          anchor = '<meta charset="utf-8" />'
+          assert anchor in s, "charset line not found"
+          tag = '<meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />'
+          s = s.replace(anchor, anchor + "\n" + tag, 1)
+          assert "2026 AllrecipesUSA" in s, "footer year 2026 not found"
+          io.open(p, "w", encoding="utf-8").write(s)
+          print("verification tag inserted after charset line")
+          EOF
+          grep -n "google-site-verification" index.html
+          grep -o "2026 AllrecipesUSA" index.html | head -1
+          git add index.html
+          git status --short
+          git commit -m "Rename allrecipesusa.html to index.html and restore Google Search Console verification tag"
+          git push
