@@ -1,0 +1,42 @@
+name: Republish index.html
+
+on:
+  workflow_dispatch:
+
+jobs:
+  republish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rename to index.html and insert Search Console verification tag
+        run: |
+          set -euo pipefail
+          test -f allrecipesusa.html
+          mv allrecipesusa.html index.html
+          python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path("index.html")
+          text = p.read_text(encoding="utf-8")
+          tag = '<meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />'
+          assert "G-B7V4JFQ0KF" in text, "GA4 ID missing"
+          assert tag not in text, "verification tag already present"
+          lines = text.splitlines(keepends=True)
+          for i, line in enumerate(lines):
+              if "<meta charset" in line:
+                  lines.insert(i + 1, tag + "\n")
+                  break
+          else:
+              raise SystemExit("charset line not found")
+          p.write_text("".join(lines), encoding="utf-8")
+          PY
+          grep -F 'google-site-verification' index.html
+          grep -F 'G-B7V4JFQ0KF' index.html
+          rm -f .github/workflows/republish.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git status --short
+          git commit -m "Republish index.html with GA4 G-B7V4JFQ0KF and preserve Search Console verification"
+          git push
